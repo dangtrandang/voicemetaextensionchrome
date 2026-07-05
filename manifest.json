@@ -1,0 +1,47 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 3,
+  "name": "Business Suite Voice Note",
+  "version": "1.2",
+  "description": "Add push-to-talk voice notes to Meta Business Suite",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "business-voice-note@yourdomain.com",
+      "strict_min_version": "109.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Messenger Voice Note"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "https://business.facebook.com/*",
+        "https://www.facebook.com/latest/inbox/*",
+        "https://www.facebook.com/latest/*"
+      ],
+      "js": ["libs/mp4-muxer.js", "scripts/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
