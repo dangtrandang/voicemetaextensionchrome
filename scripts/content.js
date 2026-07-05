@@ -206,6 +206,7 @@
           cleanupUI();
         } catch (err) {
           console.error("Error encoding AAC:", err);
+          alert("Lỗi mã hóa AAC: " + (err.message || err));
           cleanupUI();
         }
         resolve();
