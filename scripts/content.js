@@ -48,7 +48,7 @@
           codec: "mp4a.40.2", // AAC-LC
           sampleRate: sampleRate,
           numberOfChannels: numberOfChannels,
-          bitrate: 64000,
+          bitrate: 128000,
         });
 
         // Process audio buffer in chunks
