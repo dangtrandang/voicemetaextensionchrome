@@ -534,7 +534,7 @@
 
   // ====== ATTACH & SEND AUDIO ======
   async function attachAndSendAudio(blob) {
-    const fileName = `voice_${Date.now()}.m4a`;
+    const fileName = `voice_${Date.now()}.aac`;
     const file = new File([blob], fileName, { type: "audio/mp4" });
     const dataTransfer = new DataTransfer();
     dataTransfer.items.add(file);
